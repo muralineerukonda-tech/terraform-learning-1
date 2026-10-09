@@ -32,3 +32,29 @@ tuple can take any variable type compared to list can take only one type of vari
 ![alt text](images/{FF6DD39E-923D-4B42-B8CC-868A1AF8B394}.png)
 
 Adding additional elements or incorrect type as varaible values will throw errors
+
+Note-1: filename and content are map keys, so they must be enclosed in double quotes.
+
+Order of precedence
+
+From lowest to highest priority:
+
+1 Variable default values
+
+Defined inside variable blocks in .tf files.
+
+2 terraform.tfvars
+
+Automatically loaded variable file.
+
+3 terraform.tfvars.json
+
+Automatically loaded JSON variable file.
+
+4 *.auto.tfvars and *.auto.tfvars.json
+
+Automatically loaded files, in lexical filename order.
+
+5 -var and -var-file command-line options
+
+Explicit values supplied when running Terraform. These have the highest priority; among repeated assignments, later values win.
